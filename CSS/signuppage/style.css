@@ -1,0 +1,32 @@
+body{
+    padding:0;
+    margin:0;
+    background-color: #393e41;
+    height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card{
+    background-color: #e94f37;
+    padding:30px;
+    width:400px;
+    border-radius:8px;
+}
+h1{
+    color:black;
+    text-align:center;
+    font-size:40px;
+}
+
+input,button{
+    background-color:#f6f7eb;
+    border-radius:8px;
+    flex: 1; 
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
+}
