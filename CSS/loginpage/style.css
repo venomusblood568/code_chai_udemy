@@ -1,0 +1,32 @@
+body {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0;
+    margin: 0;
+    height: 100vh; /* this line basically automatically adjust the screen accordingly */
+    display : flex; /* flexbox layout, a modern and powerful layout system used to arrange and align items within a container */
+    justify-content: center;
+    align-items: center;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+    background-color: #d5d4d4;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+} 
+h1 {
+    color: #1a1a1a;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+ 
+input, button{
+    margin-bottom: 15px;
+    padding:10px;
+    border-radius:5px;
+    border: 1px solid black;
+}
+
+button:hover{
+    background-color:#0741ac;
+}
