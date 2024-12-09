@@ -95,6 +95,7 @@ h1{
 .nav2 a:hover{
     background-color: #39e35e;
     border-radius:5px;
+    border:2px white solid;
 }
 
 .nav2 .nav2_button{
