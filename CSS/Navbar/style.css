@@ -65,3 +65,48 @@ h1{
 .nav1 a:hover::after{
     transform: scaleX(1);
 }
+
+/* nav2 bar two styling like twitter */
+.nav2{
+    background:#c9c4b5;
+    padding:20px;
+    width:200px;
+    
+}
+
+.nav2 ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.nav2 li{
+    margin-bottom:12px;
+}
+
+.nav2 a{
+    text-decoration:none;
+    color: black;
+    display:block;
+    padding:10px;
+    width:90%; 
+}
+
+.nav2 a:hover{
+    background-color: #39e35e;
+    border-radius:5px;
+}
+
+.nav2 .nav2_button{
+    background-color: #39e35e;
+    color: black;
+    border:none;
+    padding: 10px;
+    width: 100%;
+    cursor:pointer;
+    border-radius: 5px;
+}
+.nav2 .nav2_button:hover{
+    background-color: #10b534;
+    border: 2px white solid;
+}
