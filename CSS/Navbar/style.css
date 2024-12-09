@@ -111,3 +111,67 @@ h1{
     background-color: #10b534;
     border: 2px white solid;
 }
+
+/* nav3 bar dropdown effect */
+.nav3{
+    background-color: #37b6ed;
+    padding: 10px;
+}
+
+.nav3 ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: space-around;
+}
+
+.nav3 a{
+    text-decoration:none;
+    padding:10px;
+    color:#fff;
+    display:block;
+    position:relative;
+}
+
+.nav3 .drop-down-content{
+    display:none;
+}
+
+.nav3 .dropdown:hover .drop-down-content{
+    display:block;
+    position:absolute;
+    background: #1ab0f0;
+    color:#fff;
+    margin-bottom:10px;
+    border:1px white solid;
+    width: 100px;
+}
+
+.nav3 .nav3_btn{
+    background-color: #7889de;
+    border: none;
+    width:80px;
+    cursor:pointer;
+}
+
+.nav3 .nav3_btn:hover{
+    background-color:#b1b9e3;
+    border:2px white solid;
+}
+
+.nav3 a::after{
+    content: " ";
+    position:absolute;
+    height: 2.5px;
+    width:100%;
+    bottom:0;
+    left:0;
+    background-color:#7889de;
+    transform:scaleX(0);
+    transition:transform 0.3s ease-in-out;
+}
+
+.nav3 a:hover::after{
+    transform:scaleX(1);
+}
