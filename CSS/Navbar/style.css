@@ -1,0 +1,67 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding:20px;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.nav-container{
+    margin-bottom : 40px;
+}
+
+h1{
+    margin-bottom : 10px;
+}
+
+.nav1{
+    background-color : #adada6;
+    padding:15px;
+}
+
+.nav1 ul{
+    list-style-type : none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+// this is a good practise so write it will save the overflow of content
+.nav1 li{
+    display: inline;
+}
+
+.nav1 a {
+    text-decoration:none;
+    color: white;
+    background-color: #de9168;
+    padding : 5px 15px;
+    border-radius:5px;
+    position:relative;
+}
+
+.nav1 .login_button{
+    background-color: #254bf6;
+    color:white;
+    border:none;
+    padding: 5px 15px;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+.nav1 a::after{
+    content:" ";
+    position: absolute;
+    height: 2.5px;
+    width:100%;
+    bottom:0;
+    left:0;
+    background-color: #ff5b03;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav1 a:hover::after{
+    transform: scaleX(1);
+}
