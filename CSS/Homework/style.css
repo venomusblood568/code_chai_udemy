@@ -1,0 +1,55 @@
+body{
+    background-color: bagie;
+    padding:0;
+    margin:0; 
+}
+h2{
+    font-family:monospace;
+    font-size:25px;
+}
+.buy{
+    border:2px black solid;
+    border-radius:5px;
+    font-family:monospace;
+    font-size:20px;
+    cursor:pointer;
+}
+.cart{
+    border:2px black solid;
+    border-radius:5px;
+    font-family:monospace;
+    font-size:20px;
+    cursor:pointer;
+}
+.container {
+    background-color: azure;
+    margin-bottom: 10px; 
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100vw; 
+    height: 100vh; 
+    text-align: center;
+    box-sizing: border-box; 
+    
+}
+
+.card{
+    align:center;
+    background-color: rgb(160, 87, 233);
+    gap:20px;
+    padding: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    border:2px solid black;
+}
+.img{
+    width:400px;
+    height:400px;
+}
+.p{
+    text-align:bottom-end;
+    font-family:monospace;
+    font-size:18px;
+}
