@@ -1,5 +1,7 @@
 console.log("coffee")
 process.stdout.write("with sam")
+const cat = "kitten"
+console.log(typeof cat)
 
 /*
 DATA TYPES : 
@@ -14,7 +16,7 @@ DATA TYPES :
 */
 
 var score = 122
-let score = 102
+let score1 = 102
 // what is the difference btween the let and var ?
 
 let name = "sam"
