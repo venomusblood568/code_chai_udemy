@@ -26,6 +26,12 @@ console.log(lemon_tea.describe())
 
 
 // prototype method for linking 
+/* Prototype chain 
+the prototype chain is a mechanism that allows objects to inherit properties and methods from other objects. 
+This chain is formed by linking objects to their prototypes. When you try to access a property or method on an object, 
+JavaScript first checks if the object has that property. If it doesn’t, JavaScript checks the prototype of that object, and 
+the search continues up the prototype chain until it reaches the Object.prototype at the top.
+*/
 function Animal(species){
     this.species = species;
 }
