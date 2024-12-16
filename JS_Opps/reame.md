@@ -15,8 +15,8 @@
 
 ## Is javascript protype or object based 
 JavaScript is prototype-based at its core but can be used in an object-based way when inheritance is not needed.
-![Is javascript protopty or object based ](JS_Opps/img/ss1.png"JS is prototype")
+![Is javascript protopty or object based ](/img/ss1.png"JS is prototype")
 
 
 ## __proto__ under the hood
-![Is javascript protopty or object based ](JS_Opps/img/ss1.png"__proto__ under the hood")
+![Is javascript protopty or object based ](img/ss1.png"__proto__ under the hood")
