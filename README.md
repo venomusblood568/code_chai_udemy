@@ -1,8 +1,10 @@
-# one_shot_web
+# code_chai_udemy
 
 This project is built using the following technologies and tools:
 
 - [HTML](html)  
 - [CSS](CSS/)  
 - [Tailwind CSS](Tailwind/)  
-- [JavaScript](JS/)  
+- [JavaScript](JS/)
+- [Object Oriented Programming](JS_OPP'S)
+  
