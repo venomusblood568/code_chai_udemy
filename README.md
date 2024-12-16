@@ -6,5 +6,5 @@ This project is built using the following technologies and tools:
 - [CSS](CSS/)  
 - [Tailwind CSS](Tailwind/)  
 - [JavaScript](JS/)
-- [Object Oriented Programming](JS_OPP'S)
-  
+- [Object Oriented Programming](JS_Opps)
+
