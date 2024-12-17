@@ -42,3 +42,49 @@ document
     let removeListelement = document.getElementById("tasklist");
     removeListelement.lastChild.remove();
   });
+
+//example6
+document
+  .getElementById("Hoverme")
+  .addEventListener("mouseover", function () {
+    alert("coffee pi lo guys!!!!!")
+  });
+
+//example7
+document
+.getElementById("teaList")
+.addEventListener("click",function(event){
+    if(event.target && event.target.matches(".teaitem")){
+        alert("you selected: " + event.target.textContent)
+    }
+})
+
+//example 8
+document
+    .getElementById("feedbackForm")
+    .addEventListener("submit", function(event){
+        event.preventDefault();
+        let feedback = document.getElementById("feedbackInput").value;
+        document.getElementById(
+          "FeedbackDisplay"
+        ).textContent = `Feedback is: ${feedback}`;
+    })
+
+//example 9
+document
+    .addEventListener("DOMContentLoaded",function(){
+        //added 3sec delay to see the actual change
+        setTimeout(function(){
+            document.getElementById("domStatus").textContent =
+              "DOM FULLY LOADED";
+        },3000)
+        
+    })
+
+//example 10
+document
+    .getElementById("toggleHighLight")
+    .addEventListener("click",function(){
+        let descriptionText = document.getElementById("descriptiontext");
+        descriptionText.classList.toggle("highlight");
+    })

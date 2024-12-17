@@ -59,6 +59,67 @@
         </ul>
         <button id="removelasttask">remove element from list</button>
     </section>
+
+    <h2>Example 6: Event Handling in the DOM</h2>
+    <section>
+        <button id="Hoverme">hover me and see magic!!!!</button>
+    </section>
+
+    <h2>Example 7: Event Delegation</h2>
+    <section>
+        <ul id="teaList">
+            <li class="teaitem">Green tea</li>
+            <li class="teaitem">Lemon tea</li>
+            <li class="teaitem">Black Tea</li>
+        </ul>
+    </section>
+    
+    <h2>Example 8: Event Delegation</h2>
+    <section>
+        <h3>Form Handling</h3>
+        <form id="feedbackForm">
+            <label for="feedbackInput">Your Feedback: </label>
+            <input type="text" id="feedbackInput" placeholder="Enter your Feedback"/>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="FeedbackDisplay"></p>
+    </section>
+
+    <p>
+        How you will caught label cause both have same name.<br>
+        answer => i think i can cause one is using id and one is using for<br>
+        Why This Works:<br>
+        id="feedbackInput" uniquely identifies the input field.<br>
+        for="feedbackInput" links the label to the input using the input's id.<br>
+        They are not conflicting because their roles are distinct:
+        id targets an actual element in the DOM.
+        for refers to the element with the matching id for accessibility.
+    </p>
+    <pre>
+    Catching Each Element:
+    
+    To target the label:
+    const label = document.querySelector('label[for="feedbackInput"]');
+    console.log(label.textContent); // Outputs: "Your Feedback:"
+    
+    To target the input:
+    const input = document.getElementById('feedbackInput');
+    console.log(input.placeholder); // Outputs: "Enter your Feedback"
+    </pre>
+
+    <h2>Example 9: DOM Content Loaded</h2>
+    <section>
+        <h2>DOM Content Loaded</h2>
+        <p id="domStatus">WAITING FOR DOM TO LOAD..</p>
+    </section>
+    
+    <h2>Example 10: css classes Manipulation</h2>
+    <section>
+        <h2>Css Classes toggle use</h2>
+        <p id="descriptiontext">This text will change color!!</p>
+        <button id="toggleHighLight">Toggle highlight</button>
+    </section>
+
 </body>
 <script src="script.js"></script>
 </html>
