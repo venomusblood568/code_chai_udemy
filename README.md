@@ -7,4 +7,4 @@ This project is built using the following technologies and tools:
 - [Tailwind CSS](Tailwind/)  
 - [JavaScript](JS/)
 - [Object Oriented Programming](JS_Opps)
-
+- [DOM BOM](Dom_Bom)
