@@ -69,7 +69,6 @@ class calculator{
 
 console.log(calculator.add(2,3))
 
-
 class Person {
   // Private-like variable with an underscore
   constructor(name) {
