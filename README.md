@@ -9,3 +9,4 @@ This project is built using the following technologies and tools:
 - [Object Oriented Programming](JS_Opps)
 - [DOM BOM](Dom_Bom)
 - [ADVANCED JS](Adv_Js)
+- [Js Project](Project_js)
