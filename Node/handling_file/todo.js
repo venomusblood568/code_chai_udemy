@@ -94,10 +94,12 @@ if(command  === "add"){
     addtask(argument);
 }else if(command === "list"){
     listtasks();
-}else if(command === "remove"){ //remove certain argument
-    removetask(parseInt(argument));
+}else if(command === "remove"){
+  //remove certain argument
+  //The function call removetask(parseInt(argument)) is used to ensure that the value of argument is converted to an integer before passing it to the removetask function.
+  removetask(parseInt(argument));
 }else if(command === "delete"){ //remove the last element
-    deletetask(parseInt(argument)); 
+    deletetask(argument); 
 }else{
     console.log("Command not found !");
 }
