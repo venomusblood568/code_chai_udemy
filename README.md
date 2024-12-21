@@ -10,4 +10,4 @@ This project is built using the following technologies and tools:
 - [DOM BOM](Dom_Bom)
 - [ADVANCED JS](Adv_Js)
 - [Js Project](Project_js)
-- [GITHUB](Github)
+- [GIT & GITHUB](Github)
