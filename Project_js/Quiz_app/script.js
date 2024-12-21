@@ -1,3 +1,11 @@
+/*
+updated code => timer
+             => shuffle question
+             => once answer move to next question
+             => custom marks
+*/
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("start-btn");
   const nextBtn = document.getElementById("next-btn");
@@ -7,12 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const choicesList = document.getElementById("choices-list");
   const resultContainer = document.getElementById("result-container");
   const scoreDisplay = document.getElementById("score");
+  const timerDisplay = document.getElementById("timer");
 
   const questions = [
     {
       question: "What does 'JS' stand for in web development?",
       choices: ["JavaScript", "JavaStyle", "JScript", "JustScript"],
       answer: "JavaScript",
+      marks: 2,
     },
     {
       question: "Which method is used to parse a JSON string in JavaScript?",
@@ -23,27 +33,31 @@ document.addEventListener("DOMContentLoaded", () => {
         "parseJSON()",
       ],
       answer: "JSON.parse()",
+      marks: 1,
     },
     {
       question:
         "What is the default value of an uninitialized variable in JavaScript?",
       choices: ["null", "undefined", "NaN", "0"],
       answer: "undefined",
+      marks: 2,
     },
   ];
 
 
   let currentQuestionIndex = 0;
   let score = 0;
-
+  let timer;
+  let timeleft = 10;
+  
   startBtn.addEventListener('click', startQuiz)
-  nextBtn.addEventListener('click',nextquestion)
   restartBtn.addEventListener("click", restartQuiz);
 
   function startQuiz(){
     startBtn.classList.add('hidden');
     resultContainer.classList.add('hidden');
     questionContainer.classList.remove('hidden');
+    timerDisplay.classList.remove("hidden");
     showQuestion()
   }
 
@@ -52,7 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showQuestion() {
     nextBtn.classList.add("hidden");
-    questionText.textContent = questions[currentQuestionIndex].question;
+    const shuffled_question = shuffleQuestion(questions)
+    questionText.textContent = shuffled_question[currentQuestionIndex].question;
 
     // Clear the previous choices
     choicesList.innerHTML = "";
@@ -65,15 +80,21 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", () => selectAnswer(choice)); // Add click event to select answer
       choicesList.appendChild(li); // Append the new `li` to the list
     });
+    
+    //start the timer
+    startTimer();
   }
 
 
   function selectAnswer(choice){
     const correctAnswer = questions[currentQuestionIndex].answer;
+    const questionMarks = questions[currentQuestionIndex].marks;
     if(choice === correctAnswer){
-      score++;
+      score += questionMarks  
     }
-    nextBtn.classList.remove("hidden");
+    clearInterval(timer); //stop the timer
+    nextquestion(); //automtically show next question 
+    nextBtn.classList.add("hidden");
   }
 
   function nextquestion(){
@@ -88,7 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function showresult(){
     questionContainer.classList.add('hidden');
     resultContainer.classList.remove('hidden');
-    scoreDisplay.textContent = `${score} out of ${questions.length}`
+    timerDisplay.classList.add("hidden");
+    scoreDisplay.textContent = `You scored ${score} out of ${totalMarks()}`;
   }
 
   function restartQuiz(){
@@ -96,5 +118,31 @@ document.addEventListener("DOMContentLoaded", () => {
     score = 0;
     resultContainer.classList.add("hidden");
     startQuiz()
+  }
+
+  //question shuffle
+  function shuffleQuestion(questions){
+    questions.sort(() => Math.random() - 0.5); //shuffel question in random order
+    return questions;
+  }
+
+  function startTimer(){
+    timeleft = 10;
+    timerDisplay.textContent = `Time left : ${timeleft}`;
+    
+    //update timer every second
+    timer = setInterval(() =>{
+      timeleft--;
+      timerDisplay.textContent = `Time left : ${timeleft}`;
+
+      if(timeleft <= 0){
+        clearInterval(timer); //stop the timer
+        nextquestion();
+      }
+    },1000)  //1000 is 1 second 
+  }
+
+  function totalMarks(){
+    return questions.reduce((total,question) => total + question.marks, 0);
   }
 });
