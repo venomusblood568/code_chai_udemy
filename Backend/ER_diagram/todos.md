@@ -1,1 +1,29 @@
-[View on Eraser![](https://app.eraser.io/workspace/T51S7G0KEsCCoHK0yg0p/preview)](https://app.eraser.io/workspace/T51S7G0KEsCCoHK0yg0p)
+todo[icon:list]{
+  _id string pk
+  content string
+  complete boolean
+  subtodo Objectid[] subtodo
+  createBy Objectid[] users
+  createdAt Date
+  updateAt Date
+}
+
+user[icon:user]{
+ _id string pk
+ username string
+ email string
+ password string
+}
+
+subtodo[icon:list]{
+  _id string pk
+  content string
+  complete boolean
+  createBy Objectid[] users
+  createdAt Date
+  updateAt Date
+}
+
+user - subtodo
+user - todo
+todo > subtodo
