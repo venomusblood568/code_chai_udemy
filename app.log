@@ -1,0 +1,2 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"500\",\"responseTime\":\"2.128\"}","timestamp":"2024-12-23T12:31:14.551Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/teas\",\"status\":\"201\",\"responseTime\":\"3.322\"}","timestamp":"2024-12-23T12:32:36.303Z"}
