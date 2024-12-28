@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 
-const uploadOncloudinary = async (localFilePath) {
+const uploadOncloudinary = async (localFilePath) => {
     try {
        if(!localFilePath) return null
        const response = await cloudinary.uploader.upload(
