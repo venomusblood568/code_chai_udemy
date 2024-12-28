@@ -19,7 +19,7 @@ const userSchema = new Schema(
       lowecase: true,
       trim: true,
     },
-    fullName: {
+    fullname: {
       type: String,
       required: true,
       trim: true,
@@ -54,7 +54,7 @@ const userSchema = new Schema(
 // Pre-save middleware to hash the password before saving a user document
 userSchema.pre("save", async function (next) {
   // If the password field has not been modified, skip this middleware
-  if (!this.modified("password")) return next();
+  if (!this.isModified("password")) return next();
 
   // Hash the password using bcrypt with a salt round of 10
   this.password = await bcrypt.hash(this.password, 10);
@@ -77,7 +77,7 @@ userSchema.methods.generatorAccessToken = function () {
       _id: this._id, // User's unique identifier
       email: this.email, // User's email
       username: this.username, // User's username
-      fullName: this.fullName, // User's full name
+      fullname: this.fullname, // User's full name
     },
     process.env.ACCESS_TOKEN_SECRET, // Secret key for signing the token
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY } // Token expiration time (e.g., '15m')
