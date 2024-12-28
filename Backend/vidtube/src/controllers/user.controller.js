@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.models.js";
-import { uploadOncloudinary } from "../utils/cloudinary.js";
+import { uploadOncloudinary,deleteFromCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -52,28 +52,39 @@ const registerUser = asyncHandler(async (req, res) => {
     }
   }
 
-  // Create user
-  const user = await User.create({
-    fullname,
-    avatar: avatar.url,
-    coverImage: coverImage?.url || "",
-    email,
-    password,
-    username: username.toLowerCase(),
-  });
-
-  // Fetch created user without sensitive data
-  const createdUser = await User.findById(user._id).select(
-    "-password -refreshToken"
-  );
-
-  if (!createdUser) {
-    throw new ApiError(500, "Something went wrong while registering a user");
+  try {
+    // Create user
+    const user = await User.create({
+      fullname,
+      avatar: avatar.url,
+      coverImage: coverImage?.url || "",
+      email,
+      password,
+      username: username.toLowerCase(),
+    });
+  
+    // Fetch created user without sensitive data
+    const createdUser = await User.findById(user._id).select(
+      "-password -refreshToken"
+    );
+  
+    if (!createdUser) {
+      throw new ApiError(500, "Something went wrong while registering a user");
+    }
+  
+    return res
+      .status(201)
+      .json(new ApiResponse(201, createdUser, "User registered successfully"));
+  } catch (error) {
+    console.log("user creation failed")
+    if(avatar){
+      await deleteFromCloudinary(avatar.publicId)
+    }
+    if(avatar){
+      await deleteFromCloudinary(coverImage.publicId)
+    }
+    throw new ApiError(500, "Something went wrong while registering a user and images were deleted!!");
   }
-
-  return res
-    .status(201)
-    .json(new ApiResponse(201, createdUser, "User registered successfully"));
 });
 
 export { registerUser };
