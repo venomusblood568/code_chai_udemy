@@ -13,3 +13,4 @@ This project is built using the following technologies and tools:
 - [GIT & GITHUB](Github)
 - [Node](Node)
 - [Backend](Backend)
+- [React](React)
