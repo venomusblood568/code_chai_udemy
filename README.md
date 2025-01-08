@@ -2,9 +2,9 @@
 
 This project is built using the following technologies and tools:
 
-- [HTML](html)  
-- [CSS](CSS/)  
-- [Tailwind CSS](Tailwind/)  
+- [HTML](html)
+- [CSS](CSS/)
+- [Tailwind CSS](Tailwind/)
 - [JavaScript](JS/)
 - [Object Oriented Programming](JS_Opps)
 - [DOM BOM](Dom_Bom)
@@ -14,3 +14,4 @@ This project is built using the following technologies and tools:
 - [Node](Node)
 - [Backend](Backend)
 - [React](React)
+- [Nextjs](nextjs)
